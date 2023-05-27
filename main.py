@@ -31,7 +31,7 @@ def gera_idade_anonima(idade):
 # Função para gerar salários privados
 def gera_salario_anonimo(valor):
     epsilon = 1.0 # Controlador de nível de privacidade (1 geralmente é considerado como um nível moderado de privacidade)
-    sensibilidade = 200 # Maior diferença possível entre dois salários
+    sensibilidade = 1550 # Metade da diferença máxima entre os salários
     escala = sensibilidade / epsilon
     ruido = numpy.random.laplace(0, escala) # Distribuição de laplace é usada comumente em DP (0 = a distribuição tá centrada em um valor zero, escala = quanto maior a escala maior o ruído)
     valor_ruidoso = valor + ruido
@@ -40,9 +40,17 @@ def gera_salario_anonimo(valor):
 
 # Dados originais
 dados_pessoais = [
-    {'nome': 'Marcos Vinicius','salario': 3500,'idade': 23},
-    {'nome': 'Everton Kauan','salario': 3300,'idade': 19},
-    {'nome': 'Maria Galdino','salario': 1600,'idade': 32},
+    {'nome': 'João Silva','salario': 3500,'idade': 23}, 
+    {'nome': 'Maria Santos','salario': 3300,'idade': 19}, 
+    {'nome': 'Pedro Oliveira','salario': 2600,'idade': 39},
+    {'nome': 'Ana Costa','salario': 2700,'idade': 29}, 
+    {'nome': 'Luiz Pereira','salario': 3300,'idade': 31}, 
+    {'nome': 'Laura Rodrigues','salario': 3500,'idade': 25}, 
+    {'nome': 'Carlos Almeida','salario': 4200,'idade': 27}, 
+    {'nome': 'André Ferreira','salario': 5600,'idade': 33}, 
+    {'nome': 'Juliana Souza','salario': 6200,'idade': 35}, 
+    {'nome': 'Rafael Martins','salario': 3000,'idade': 37}, 
+    {'nome': 'Camila Ramos','salario': 6400,'idade': 21}, 
 ]
 
 # Dados anônimos
