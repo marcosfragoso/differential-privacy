@@ -31,9 +31,9 @@ def gera_salario_anonimo(valor):
 
 # Dados originais
 dados_pessoais = [
-    {'nome': 'Marcos','salario': 3500,'idade': 23},
-    {'nome': 'Everton','salario': 3300,'idade': 19},
-    {'nome': 'Maria','salario': 1600,'idade': 32},
+    {'nome': 'Marcos Vinicius','salario': 3500,'idade': 23},
+    {'nome': 'Everton Kauan','salario': 3300,'idade': 19},
+    {'nome': 'Maria Galdino','salario': 1600,'idade': 32},
 ]
 
 # Dados anônimos
@@ -50,5 +50,5 @@ for i in range(0, len(dados_pessoais)):
 for i in range(0, len(dados_pessoais)):
     print('-=' * 40)
     print(f"| Nome original =   {dados_pessoais[i]['nome']:>10} | Nome privado = {dados_anonimos[i]['nome']:>10}")
-    print(f"| Idade original =  {dados_pessoais[i]['idade']:>10} | Idade privada = {dados_anonimos[i]['idade']:>10}")
-    print(f"| Salário original ={dados_pessoais[i]['salario']:>10} | Salário privado = {dados_anonimos[i]['salario']:>10}")
+    print(f"| Idade original =  {dados_pessoais[i]['idade']:>10} | Idade privada = {dados_anonimos[i]['idade']:<10.0f}")
+    print(f"| Salário original ={dados_pessoais[i]['salario']:>10} | Salário privado = {dados_anonimos[i]['salario']:>10.2f}")
