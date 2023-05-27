@@ -1,4 +1,4 @@
-# differential-privacy
+# Differential Privacy
 
 Trabalho de FMCC
 Data de entrega: 12/06
