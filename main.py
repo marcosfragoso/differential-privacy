@@ -1,4 +1,4 @@
-import random
+import secrets
 import numpy
 
 # Função para gerar nomes privados com a mesma quantidade de letras
@@ -11,9 +11,9 @@ def gera_nome_anonimo(nome):
             nome_privado += ' '
         elif nome[i].isalpha():
             if i % 2 == 0:
-                nome_privado += random.choice(vogais)
+                nome_privado += secrets.choice(vogais)
             else:
-                nome_privado += random.choice(consoantes)
+                nome_privado += secrets.choice(consoantes)
     return nome_privado
 
 # Função para gerar idades privadas
