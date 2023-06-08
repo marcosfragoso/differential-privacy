@@ -25,7 +25,7 @@ dados_pessoais = [
     {'salario': 6400.00,'idade': 21}, 
 ]
 
-sensibilidade_salario = 1000 
+sensibilidade_salario = 3000
 epsilon_salario = 1.0
 
 sensibilidade_idade = 2 
