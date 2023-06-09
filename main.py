@@ -1,13 +1,8 @@
 from diffprivlib.mechanisms import Laplace
 
 
-def adicionar_ruido_idade(valor, sensibilidade, epsilon):
-    valor_privado = Laplace(epsilon=epsilon, sensitivity=sensibilidade).randomise(valor)  # Adiciona ruído de Laplace
-    return valor_privado
-    
-
-def adicionar_ruido_salario(valor, sensibilidade, epsilon):
-    valor_privado = Laplace(epsilon=epsilon, sensitivity=sensibilidade).randomise(valor)  # Adiciona ruído de Laplace
+def adicionar_ruido(valor, sensibilidade, epsilon):
+    valor_privado = Laplace(epsilon=epsilon, sensitivity=sensibilidade).randomise(valor)  
     return valor_privado
 
 
@@ -28,7 +23,7 @@ dados_pessoais = [
 sensibilidade_salario = 3000
 epsilon_salario = 1.0
 
-sensibilidade_idade = 2 
+sensibilidade_idade = 3
 epsilon_idade = 1.0
 
 dados_anonimos = []
@@ -39,8 +34,8 @@ soma_idades_privadas = 0
 soma_idades_originais = 0
 
 for dado in dados_pessoais:
-    salario_privado = adicionar_ruido_salario(dado['salario'], sensibilidade_salario, epsilon_salario)
-    idade_privada = adicionar_ruido_idade(dado['idade'], sensibilidade_idade, epsilon_idade)
+    salario_privado = adicionar_ruido(dado['salario'], sensibilidade_salario, epsilon_salario)
+    idade_privada = adicionar_ruido(dado['idade'], sensibilidade_idade, epsilon_idade)
 
     soma_salarios_originais += dado['salario']
     soma_salarios_privados += salario_privado
@@ -57,11 +52,3 @@ for i in range(len(dados_pessoais)):
 print('-=' * 40)
 print(f'| Média idades originais =   {soma_idades_originais/len(dados_pessoais):>10.2f} | Média idades privadas = {soma_idades_privadas/len(dados_pessoais):>10.2f}')
 print(f'| Média salários originais = {soma_salarios_originais/len(dados_pessoais):>10.2f} | Média salários privados = {soma_salarios_privados/len(dados_pessoais):>10.2f}')
-
-#       Conclusão: Podemos observar a importância da escolha do ruído para cada atributo: 
-# i)    Para a idade, por ser menor o ruído, a média privada se aproxima mais da média original.
-# ii)   Para o salário, por ser maior o ruído, a média privada se afasta mais da média original.
-# iii)  Para ambos os atributos, a média privada se aproxima da média original conforme aumentamos o número de dados.
-# iv)   Para ambos os atributos, a média privada se aproxima da média original conforme diminuimos o ruído.
-# v)    Para ambos os atributos, a média privada se afasta da média original conforme aumentamos o ruído.
-# vi)   Para ambos os atributos, a média privada se afasta da média original conforme diminuimos o número de dados.
