@@ -1,8 +1,8 @@
 # Differential Privacy
 
-* Trabalho de FMCC
-- Data de entrega: 12/06
+## Descrição
+Exemplo de aplicação de privacidade diferencial para salário e idade
 
-* Instituição de Ensino: Universidade Federal de Campina Grande - Campus CG
-* GT: Alexandre Medeiros, Adenou Júnior, Everton Kauan, Marcos Fragoso e Maria Galdino
-* Professor: Eanes Pereira
+## Desenvolvedores
+* marcosfragoso
+* EvertonKauan
